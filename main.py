@@ -1,5 +1,8 @@
 import requests
 from send_email import send_email
+from datetime import date
+
+today = date.today().isoformat()
 
 api_key = "ac262d94649641d88143bdcfa1c510e3"
 
@@ -7,7 +10,7 @@ topic = "tesla"
 
 url = "https://newsapi.org/v2/everything?" \
     f"q={topic}&" \
-    "from=2025-11-13&" \
+    f"from={today}&" \
     "sortBy=publishedAt&" \
     "apiKey=ac262d94649641d88143bdcfa1c510e3&" \
     "language=en"
